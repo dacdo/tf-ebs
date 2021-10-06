@@ -3,8 +3,7 @@ resource "aws_instance" "public-vm" {
   subnet_id     = aws_subnet.public-subnet.id
   instance_type = "t2.micro"
   key_name      = var.key_name
-  # ami         = data.aws_ami.redhat.id
-  ami = var.ami_id
+  ami           = data.aws_ami.redhat.id
 
   associate_public_ip_address = true
   # user_data                   = file("ebs.sh")
